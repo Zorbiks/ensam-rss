@@ -23,4 +23,4 @@ COPY ./crontab /etc/crontabs/root
 EXPOSE 8000
 
 # Run cron and FastAPI
-CMD crond -l 2 -L /var/log/cron.log & uvicorn app.server:app --host 0.0.0.0 --port 8000
+CMD python /app/app/generate_feed.py && crond -l 2 -L /var/log/cron.log & uvicorn app.server:app --host 0.0.0.0 --port 8000

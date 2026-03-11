@@ -5,4 +5,4 @@ app = FastAPI()
 
 @app.get("/feed.xml")
 async def get_feed():
-    return FileResponse("feed.xml", media_type="application/xml")
+    return FileResponse("/app/feed.xml", media_type="application/xml")
